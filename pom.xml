@@ -12,7 +12,8 @@
     <artifactId>rest-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rest-app</name>
-    <description>Simple rest application</description>
+    <packaging>war</packaging>
+    <description>Review rest app</description>
 
     <properties>
         <java.version>1.8</java.version>

@@ -8,10 +8,10 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class RestAppApplication {
+public class RestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RestAppApplication.class, args);
+        SpringApplication.run(RestApplication.class, args);
     }
 
     @Bean("address-service")
