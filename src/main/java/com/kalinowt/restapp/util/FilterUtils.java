@@ -1,7 +1,7 @@
 package com.kalinowt.restapp.util;
 
 
-import com.kalinowt.restapp.dto.Outbound.OutboundIpApiResponse;
+import com.kalinowt.restapp.dto.Outbound.IpApiResponse;
 import com.kalinowt.restapp.models.IncomingIpApiQuery;
 
 
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FilterUtils {
-    public static void filterNorthHemisphereCountries(OutboundIpApiResponse response) {
+    public static void filterNorthHemisphereCountries(IpApiResponse response) {
         assert response != null;
         List<IncomingIpApiQuery> filteredQueries= response.getResponseQueries().stream()
                 .filter(m -> m.getLat() > 0)

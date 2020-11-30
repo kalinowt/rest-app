@@ -1,9 +1,8 @@
 package com.kalinowt.restapp.services;
 
-import com.kalinowt.restapp.dto.Inbound.InboundAddressCheckRequest;
-import com.kalinowt.restapp.dto.Inbound.InboundAddressCheckResponse;
-import org.springframework.http.ResponseEntity;
+import com.kalinowt.restapp.dto.Inbound.AddressCheckRequest;
+import com.kalinowt.restapp.dto.Inbound.AddressCheckResponse;
 
 public interface IpApiService {
-    InboundAddressCheckResponse getCountriesForNorthHemisphere(InboundAddressCheckRequest request);
+    AddressCheckResponse getCountriesForNorthHemisphere(AddressCheckRequest request);
 }

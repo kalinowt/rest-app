@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 @NoArgsConstructor
-public class OutboundIpApiQuery {
+public class IpApiQuery {
    String fields;
    String query;
 }

@@ -12,11 +12,11 @@ import java.util.TreeSet;
 @Setter
 @Getter
 @Accessors(chain = true)
-public class InboundAddressCheckResponse {
+public class AddressCheckResponse {
         @JsonProperty("northcountries")
         Set<String> countries;
 
-        public InboundAddressCheckResponse(){
+        public AddressCheckResponse(){
                 this.countries = new TreeSet<>();
         }
 }

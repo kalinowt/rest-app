@@ -10,14 +10,14 @@ import java.util.List;
 
 @Setter
 @Getter
-public class OutboundIpApiResponse{
+public class IpApiResponse {
     List<IncomingIpApiQuery> responseQueries;
 
-    public OutboundIpApiResponse(){
+    public IpApiResponse(){
         this.responseQueries = new ArrayList<>();
     }
 
-    public OutboundIpApiResponse setResponseQueries(IncomingIpApiQuery[] queries){
+    public IpApiResponse setResponseQueries(IncomingIpApiQuery[] queries){
         this.responseQueries = Arrays.asList(queries);
         return this;
     }

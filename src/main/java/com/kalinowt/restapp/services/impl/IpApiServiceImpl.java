@@ -1,22 +1,16 @@
 package com.kalinowt.restapp.services.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kalinowt.restapp.dto.Inbound.InboundAddressCheckRequest;
-import com.kalinowt.restapp.dto.Inbound.InboundAddressCheckResponse;
-import com.kalinowt.restapp.dto.Outbound.OutboundIpApiRequest;
+import com.kalinowt.restapp.dto.Inbound.AddressCheckRequest;
+import com.kalinowt.restapp.dto.Inbound.AddressCheckResponse;
+import com.kalinowt.restapp.dto.Outbound.IpApiRequest;
 import com.kalinowt.restapp.models.IncomingIpApiQuery;
-import com.kalinowt.restapp.models.OutboundIpApiQuery;
 import com.kalinowt.restapp.mappers.DTOMapper;
-import com.kalinowt.restapp.dto.Outbound.OutboundIpApiResponse;
+import com.kalinowt.restapp.dto.Outbound.IpApiResponse;
 import com.kalinowt.restapp.services.IpApiService;
 import com.kalinowt.restapp.util.FilterUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -45,10 +39,10 @@ public class IpApiServiceImpl implements IpApiService {
     private RestTemplate restTemplate;
 
     @Override
-    public InboundAddressCheckResponse getCountriesForNorthHemisphere(InboundAddressCheckRequest request) {
-        OutboundIpApiRequest ipApiRequest = DTOMapper.toIpApiRequest(request,fields);
+    public AddressCheckResponse getCountriesForNorthHemisphere(AddressCheckRequest request) {
+        IpApiRequest ipApiRequest = DTOMapper.toIpApiRequest(request,fields);
         IncomingIpApiQuery[] responseQuery = restTemplate.postForObject(address+path,ipApiRequest.getQueries(), IncomingIpApiQuery[].class);
-        OutboundIpApiResponse ipApiResponse = new OutboundIpApiResponse().setResponseQueries(responseQuery);
+        IpApiResponse ipApiResponse = new IpApiResponse().setResponseQueries(responseQuery);
         FilterUtils.filterNorthHemisphereCountries(ipApiResponse);
         return DTOMapper.toAddressCheckResponse(ipApiResponse);
     }

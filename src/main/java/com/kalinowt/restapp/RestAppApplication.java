@@ -9,14 +9,15 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class RestAppApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(RestAppApplication.class, args);
+    }
+
     @Bean("address-service")
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         RestTemplate restTemplate = builder.build();
         restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
         return restTemplate;
     }
-    public static void main(String[] args) {
-        SpringApplication.run(RestAppApplication.class, args);
-    }
-
 }
