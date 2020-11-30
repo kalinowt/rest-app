@@ -1,0 +1,18 @@
+server:
+  port : 8888
+ip-api:
+  query-limit: 100
+  query-fields: country,lat,query
+  address:
+    value: http://ip-api.com
+    batch-path: /batch
+debug: true
+logging:
+  level:
+    httpclient:
+      wire: DEBUG
+    org:
+      apache:
+        http: DEBUG
+
+

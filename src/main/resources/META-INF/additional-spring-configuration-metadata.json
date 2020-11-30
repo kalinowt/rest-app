@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "ip-api.query-limit",
+      "type": "java.lang.Integer",
+      "description": "Maximum number of addresses that IpApi query can receive."
+    },
+    {
+      "name": "ip-api.address.batch-path",
+      "type": "java.lang.String",
+      "description": "path where json with query should be sent."
+    },
+    {
+      "name": "ip-api.query-fields",
+      "type": "java.lang.String",
+      "description": "Fields that should be included in response according to https://ip-api.com/docs/api:batch."
+    },
+    {
+      "name": "ip-api.address.value",
+      "type": "java.lang.String",
+      "description": "ip-api domain."
+    }
+  ] }
